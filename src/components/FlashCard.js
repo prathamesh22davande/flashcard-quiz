@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ReactCardFlip from "react-card-flip";
 
-function FlashCard({ flashCard }) {
+function FlashCard({ flashCard, no }) {
   const [flip, setFlip] = useState(false);
 
   return (
@@ -12,7 +12,9 @@ function FlashCard({ flashCard }) {
       {/* {flip ? flashCard.answer : flashCard.question} */}
       <ReactCardFlip isFlipped={flip}>
         <div>
-          <h5 className="text-dark text-center">{flashCard.question}</h5>
+          <h5 className="text-dark text-center">
+            {no + ") " + flashCard.question}
+          </h5>
           <div>
             {flashCard.options.map((option) => {
               return <p className="text-dark pl-4">{option}</p>;
